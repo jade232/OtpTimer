@@ -1,0 +1,237 @@
+.App {
+    display: grid;
+    place-items: center;
+    margin: auto;
+}
+
+.btn-buddy {
+    color: black !important;
+    background-color: cornsilk !important;
+    border: 1px solid hsl(0, 0%, 86%) !important;
+    cursor: pointer;
+    margin: 70px 0 !important;
+    padding: 14px;
+    width: 100px;
+    border-radius: 2px !important;
+}
+
+.btn-buddy:hover {
+    animation: spin 1s ease;
+    animation-duration: 1s;
+    background-color: white !important;
+}
+
+/* h4::after {
+    content: "buddy";
+    padding-left: 12px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 400;
+    animation: spin 1s infinite ease;
+} */
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+.btn-buddy::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    background-color: black;
+    width: 0px;
+    height: 4px;
+    border-radius: 2px 2px 0 0;
+    transition: width 1s ease;
+}
+
+.btn-buddy::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    background-color: black;
+    width: 0px;
+    height: 4px;
+    border-radius: 0 0 2px 2px;
+    transition: width 1s ease;
+}
+
+.btn-buddy:hover::after,
+.btn-buddy:hover::before {
+    width: 96px;
+}
+
+.btn-container::after {
+    content: "";
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    right: 46.6%;
+    top: 71px;
+    padding: 8px 0;
+    background-color: black;
+    transition: height 1s ease;
+}
+
+.btn-container::before {
+    content: "";
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    left: 46.6%;
+    top: 71px;
+    z-index: 1;
+    padding: 8px 0;
+    background-color: black;
+    transition: height 1s ease;
+
+}
+
+.btn-container:hover::after,
+.btn-container:hover::before {
+    height: 21px;
+    width: 4px;
+}
+
+.red-dot {
+    margin-top: 32px;
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    border-radius: 50%;
+    animation: rotate 3s linear infinite;
+}
+
+.green-dot {
+    margin-top: 32px;
+    width: 12px;
+    height: 12px;
+    background-color: green;
+    border-radius: 50%;
+    animation: random 3s linear infinite;
+    animation-direction: reverse;
+}
+
+.purple-dot {
+    margin-top: 32px;
+    width: 12px;
+    height: 12px;
+    background-color: purple;
+    border-radius: 50%;
+    animation: forward 3s linear infinite;
+    animation-direction: normal;
+}
+
+.blue-dot {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    width: 12px;
+    height: 12px;
+    background-color: blue;
+    border-radius: 50%;
+    animation: continue 3s linear infinite;
+    animation-direction: reverse;
+}
+
+.ball-container {
+    position: absolute;
+    top: 40%;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) translate(200px, -200px);
+    }
+
+    25% {
+        transform: rotate(90deg) translate(200px, -200px);
+    }
+
+    50% {
+        transform: rotate(180deg) translate(200px, -200px);
+    }
+
+    75% {
+        transform: rotate(270deg) translate(200px, -200px);
+    }
+
+    100% {
+        transform: rotate(360deg) translate(200px, -200px);
+    }
+}
+
+
+@keyframes random {
+    0% {
+        transform: rotate(0deg) translate(150px, -150px);
+    }
+
+    25% {
+        transform: rotate(-90deg) translate(150px, -150px);
+    }
+
+    50% {
+        transform: rotate(-180deg) translate(150px, -150px);
+    }
+
+    75% {
+        transform: rotate(-270deg) translate(150px, -150px);
+    }
+
+    100% {
+        transform: rotate(-360deg) translate(150px, -150px);
+    }
+}
+
+@keyframes forward {
+    0% {
+        transform: rotate(0deg) translate(100px, -100px);
+    }
+
+    25% {
+        transform: rotate(90deg) translate(100px, -100px);
+    }
+
+    50% {
+        transform: rotate(180deg) translate(100px, -100px);
+    }
+
+    75% {
+        transform: rotate(270deg) translate(100px, -100px);
+    }
+
+    100% {
+        transform: rotate(360deg) translate(100px, -100px);
+    }
+}
+
+@keyframes continue {
+    0% {
+        transform: rotate(0deg) translate(50px, -50px);
+    }
+
+    25% {
+        transform: rotate(-90deg) translate(50px, -50px);
+    }
+
+    50% {
+        transform: rotate(-180deg) translate(50px, -50px);
+    }
+
+    75% {
+        transform: rotate(-270deg) translate(50px, -50px);
+    }
+
+    100% {
+        transform: rotate(-360deg) translate(50px, -50px);
+    }
+}
+
+/* h4:hover::after{
+    opacity: 0;
+} */
